@@ -61,6 +61,8 @@ class LongitudinalPlanner(LongitudinalPlannerSP):
     LongitudinalPlannerSP.__init__(self, self.CP, self.mpc)
     self.fcw = False
     self.dt = dt
+    self.traffic_lights = TrafficLightController()
+self.params = Params()
     self.allow_throttle = True
 
     self.a_desired = init_a
@@ -136,7 +138,10 @@ class LongitudinalPlanner(LongitudinalPlannerSP):
       self.v_desired_filter.x = v_ego
       # Clip aEgo to cruise limits to prevent large accelerations when becoming active
       self.a_desired = np.clip(sm['carState'].aEgo, accel_clip[0], accel_clip[1])
-
+# Abe Pilot - Traffic Light stop logic
+if self.params.get("AbeTrafficLightsEnabled") == b"1":
+if self.traffic_lights.should_stop_on_red():
+self.v_desired = 0.0 # desired speed = 0 (full stop)
     # Prevent divergence, smooth in current v_ego
     self.v_desired_filter.x = max(0.0, self.v_desired_filter.update(v_ego))
     x, v, a, j, throttle_prob = self.parse_model(sm['modelV2'])
