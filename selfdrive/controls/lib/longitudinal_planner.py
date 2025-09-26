@@ -14,6 +14,8 @@ from openpilot.selfdrive.controls.lib.longitudinal_mpc_lib.long_mpc import T_IDX
 from openpilot.selfdrive.controls.lib.drive_helpers import CONTROL_N, get_accel_from_plan
 from openpilot.selfdrive.car.cruise import V_CRUISE_MAX, V_CRUISE_UNSET
 from openpilot.common.swaglog import cloudlog
+from selfdrive.controls.lib.traffic_lights import TrafficLightController
+from openpilot.common.params import Params
 from openpilot.common.params import Params
 from openpilot.selfdrive.controls.lib.traffic_lights import TrafficLightController
 from openpilot.sunnypilot.selfdrive.controls.lib.longitudinal_planner import LongitudinalPlannerSP
