@@ -8,7 +8,12 @@ DESCRIPTIONS = {
   "OpenpilotEnabledToggle": (
     "Use the openpilot system for adaptive cruise control and lane keep driver assistance. " +
     "Your attention is required at all times to use this feature."
-  ),
+    ),
+  "AbeTrafficLightsEnabled": (
+"Traffic lights (stop on red). "
+"Experimental: Abe Pilot will gently decelerate and stop for confidently detected red lights. "
+"Default OFF."
+),
   "DisengageOnAccelerator": "When enabled, pressing the accelerator pedal will disengage openpilot.",
   "LongitudinalPersonality": (
     "Standard is recommended. In aggressive mode, openpilot will follow lead cars closer and be more aggressive with the gas and brake. " +
