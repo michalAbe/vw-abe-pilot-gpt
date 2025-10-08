@@ -1,3 +1,4 @@
+from selfdrive.ui.widgets.startup_logo import StartupLogoWidget
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QPixmap, QPainter
