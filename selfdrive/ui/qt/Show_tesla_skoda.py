@@ -1,4 +1,11 @@
 from selfdrive.ui.widgets.startup_logo import StartupLogoWidget
+# --- Tesla-Škoda startup logo ---
+startup_logo = StartupLogoWidget()
+startup_logo.show()
+app.processEvents()   # nech sa logo hneď zobrazí
+time.sleep(2.5)       # dĺžka zobrazenia loga (v sekundách)
+startup_logo.close()
+# --- end of startup logo ---
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QPixmap, QPainter
